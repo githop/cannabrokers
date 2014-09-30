@@ -1,0 +1,43 @@
+
+<div class="row">
+	<div class="large-11 large-offset-1 columns">
+		<h3>Flower</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Strain name</th>
+					<th>Sativa - Indica - High CBD</th>
+					<th>Description</th>
+					<th>Quantity</th>
+				</tr>
+			</thead>
+			<tbody>
+			<%@flowers.each do |flower|%>
+				<tr>
+					<td><%=link_to(flower.strain, flower_path(flower))%></td>
+					<td><%=flower.kind%></td>
+					<td><%=flower.description[0..40]%>...</td>
+					<td><%=flower.quantity_price%></td>
+				</tr>		
+				<% end %>
+			</tbody>
+		</table>
+
+		<div data-mantis-zone='cannabrokersnetwork'></div>
+
+	</div>
+</div>
+
+<script type="text/javascript">
+	MANTIS = {
+		site: '54272a6b68e1050b00cc2528'
+	};
+</script>
+<script type="text/javascript">
+	var z = document.createElement("script");
+	z.type = "text/javascript";
+	z.async = true;
+	z.src = "//assets.mantisadnetwork.com/mantodea.min.js";
+	var s = document.getElementsByTagName('head')[0];
+	s.parentNode.insertBefore(z, s);
+</script>

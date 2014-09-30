@@ -1,0 +1,41 @@
+
+<div class="row">
+	<div class="large-10 large-offset-1 columns">
+		<h3><%=@merchant.name%><small> Edibles</small></h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Product</th>
+					<th>Description</th>
+					<th>Price</th>
+				</tr>
+			</thead>
+			<tbody>
+			<%@merchant.edibles.each do |edible|%>
+				<tr>
+					<td><%=link_to(edible.name, merchant_edible_path(@merchant, edible))%></td>
+					<td><%=edible.description[0..40]%></td>
+					<td><%=edible.price%></td>
+				</tr>		
+				<% end %>
+			</tbody>
+		</table>
+
+		<div data-mantis-zone='cannabrokersnetwork'></div>
+
+	</div>
+</div>
+
+<script type="text/javascript">
+	MANTIS = {
+		site: '54272a6b68e1050b00cc2528'
+	};
+</script>
+<script type="text/javascript">
+	var z = document.createElement("script");
+	z.type = "text/javascript";
+	z.async = true;
+	z.src = "//assets.mantisadnetwork.com/mantodea.min.js";
+	var s = document.getElementsByTagName('head')[0];
+	s.parentNode.insertBefore(z, s);
+</script>

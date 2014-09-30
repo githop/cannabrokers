@@ -1,0 +1,2 @@
+module ConcentratesHelper
+end
