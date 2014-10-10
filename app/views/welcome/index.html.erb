@@ -2,13 +2,18 @@
 <!-- ######################## Header ######################## -->
 
 <header>
+  <div class="text-center">
+    <%=image_tag('cbkrs.png', class: "logo")%>
+  </div>
   <div class="row">
-    <div class="text-center">
-    <%=image_tag('cbkrs.png')%>
-    <p>Featured Merchant:</p>
-    <h3><%=link_to(@premium_merchant.name, merchant_path(@premium_merchant))%></h3>
+    <div class="small-4 small-centered columns">
+      <div class="text-center">
+        <h5 class="subheader">Featured Merchant:</h5>
+        <h3><%=link_to(@premium_merchant.name, merchant_path(@premium_merchant))%></h3>
+      </div>
     </div>
   </div>
+
 </header>
 
 
@@ -64,7 +69,7 @@
 
   <div class="row">
 
-  
+
 
   </div>
 
