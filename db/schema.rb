@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 20140928170652) do
     t.string   "name"
     t.text     "description"
     t.string   "phone"
+    t.string   "email"
+    t.boolean  "premium",     default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

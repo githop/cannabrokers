@@ -4,6 +4,8 @@ class CreateMerchants < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.string :phone
+      t.string :email
+      t.boolean :premium, default: false
 
       t.timestamps
     end

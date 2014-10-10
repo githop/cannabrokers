@@ -1,23 +1,23 @@
-Company,Description,Phone
-Cheeba Chews,"""America's favorite edible""",513-470-8492
-Incredibles,Cannabis Infused Chocolate ,303-623-6060
-Tincture Belle,"Handcrafted Tincture, Edibles, and Topicals",719-375-1031
-The Growing Kitchen,Boulder edible company,303-578-8454
-Wana,Infused candies,855-668-3342
-Mountain High,High CBD candies,855-668-3342
-Colorado Cannabis Co,Assorted Cannabis infused products,303-534-7875
-Edipure,Cannabis infused Gourmet Candies,720-935-7667
-Colorado Wholesale Distribution,Wholesale edible company,303-532-6901
-Twirling Hippy Confections,Gourmet Savory edibles,303-922-3661
-Boulder Botanics,Medical and Recreational Dispensary,720-379-6046
-Flower Power,Medical and Recreational Dispensary,970-672-8165
-Good Chemistry,Medical and Recreational Dispensary,720-626-7217
-Craft Concentrates,Concentrate Company,303-916-6355
-Bhang ,Edible Company,970-555-5555
-Sweet Grass,Edible Company,303-284-6476
-Gaias Garden,Edible Company,970-555-5555
-Alpenglo,Recreational Dispensary,970-389-6839
-Lab 710,Concentrate Company,513-470-8492
-Colorado Concentrates,Concentrate Company,855-6683342
-MMRockies,Medical Dispensary,970-668-6337
-Green Dot,Concentrate Company,970-555-9876
+Company,Description,Phone,Email,Premium
+Cheeba Chews,"""America's favorite edible""",513-470-8492,,TRUE
+Incredibles,Cannabis Infused Chocolate ,303-623-6060,,FALSE
+Tincture Belle,"Handcrafted Tincture, Edibles, and Topicals",719-375-1031,,
+The Growing Kitchen,Boulder edible company,303-578-8454,,
+Wana,Infused candies,855-668-3342,,
+Mountain High,High CBD candies,855-668-3342,,
+Colorado Cannabis Co,Assorted Cannabis infused products,303-534-7875,,
+Edipure,Cannabis infused Gourmet Candies,720-935-7667,,
+Colorado Wholesale Distribution,Wholesale edible company,303-532-6901,,
+Twirling Hippy Confections,Gourmet Savory edibles,303-922-3661,,
+Boulder Botanics,Medical and Recreational Dispensary,720-379-6046,,
+Flower Power,Medical and Recreational Dispensary,970-672-8165,,
+Good Chemistry,Medical and Recreational Dispensary,720-626-7217,,
+Craft Concentrates,Concentrate Company,303-916-6355,,
+Bhang ,Edible Company,970-555-5555,,
+Sweet Grass,Edible Company,303-284-6476,,
+Gaias Garden,Edible Company,970-555-5555,,
+Alpenglo,Recreational Dispensary,970-389-6839,,
+Lab 710,Concentrate Company,513-470-8492,,
+Colorado Concentrates,Concentrate Company,855-6683342,,
+MMRockies,Medical Dispensary,970-668-6337,,
+Green Dot,Concentrate Company,970-555-9876,,

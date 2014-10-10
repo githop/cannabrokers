@@ -12,7 +12,11 @@
 			<tbody>
 				<% @merchants.each do |merchant| %>
 				<tr>
-					<td><%=link_to(merchant.name, merchant_edibles_path(merchant))%></td>
+					<td><%=link_to(merchant.name, merchant_edibles_path(merchant))%> 
+					<%if merchant.premium %>
+					<span class="label success radius"> premium </span>
+					<%end%>
+					</td>
 					<td><%=merchant.description[0..40]%>...</td>
 					<td><%=merchant.phone%></td>
 				</tr>

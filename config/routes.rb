@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :merchants do 
     resources :edibles
     resources :concentrates
+    resources :flowers, only: [:show, :index]
   end
   resources :flowers
 

@@ -1,0 +1,33 @@
+<div class="row">
+	<div class="large-10 large-offset-2 columns">
+		<h3><%=@merchant.name%></h3>
+		
+		<p><%=@merchant.description%></p>
+		<div class="row">
+			<div class="large-4 columns">
+				<h3>Edibles</h3>
+				<ul>
+				<%@merchant.edibles.each do |edible|%>
+					<li><%=link_to(edible.name, merchant_edible_path(@merchant, edible))%></li>
+				<%end%>
+				</ul>
+			</div>
+			<div class="large-4 columns">
+				<h3>Concentrates</h3>
+				<ul>
+				<%@merchant.concentrates.each do |concentrate|%>
+					<li><%=link_to(concentrate.strain, merchant_concentrate_path(@merchant, concentrate))%></li>
+				<%end%>
+				</ul>
+			</div>
+			<div class="large-4 columns">
+				<h3>Flowers</h3>
+				<ul>
+					<%@merchant.flowers.each do |flower|%>
+						<li><%=link_to(flower.strain, flower_path(flower))%></li>
+					<%end%>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

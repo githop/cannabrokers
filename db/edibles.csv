@@ -1,11 +1,11 @@
 Company,name,Description,Price
-Cheeba Chew,Quad Dose,"70mg Sativa, Indica, Hybrid variety",$6 
-Cheeba Chew,Deca Dose,175mg Hybrid,$12 
-Cheeba Chew,High CBD,70mg 50mg CBD,$8
-Cheeba Chew,Pure CBD,52mg 50mg CBD,$10
-Cheeba Chew,Caramel,"100mg Caramel Indica, Sativa",$8
-Cheeba Chew,Mint Chocolate Chew,"100mg Mint Indica, Sativa",$8
-Cheeba Chew,Green Hornet,"70mg Indica, Sativa, Hybrid",$8
+Cheeba Chews,Quad Dose,"70mg Sativa, Indica, Hybrid variety",$6 
+Cheeba Chews,Deca Dose,175mg Hybrid,$12 
+Cheeba Chews,High CBD,70mg 50mg CBD,$8
+Cheeba Chews,Pure CBD,52mg 50mg CBD,$10
+Cheeba Chews,Caramel,"100mg Caramel Indica, Sativa",$8
+Cheeba Chews,Mint Chocolate Chew,"100mg Mint Indica, Sativa",$8
+Cheeba Chews,Green Hornet,"70mg Indica, Sativa, Hybrid",$8
 Incredibles,Blueberry Bliss,"White chocolate, flax crispies, and real blueberries with 100mg of activated hash oil.",$6
 Incredibles,Boulder Bar,Two kinds of chocolate and house made toffee with 100mg of activated hash oil.,$6
 Incredibles,Cookies and Creme,White chocolate and a lot of chocolate cookies along with 100mg of activated hash oil.,$6
@@ -18,12 +18,12 @@ Incredibles,Mile High Mint,Milk chocolate and spearmint with 175mg of activated 
 Incredibles,Mile Higher Mint,Milk chocolate and peppermint with 300mg of activated hash oil.,$10
 Incredibles,Fire Berry,"Special, sweet dark chocolate, roasted habanero peppers, and real raspberries with 300mg of activated hash oil.",$10
 Incredibles,Mikiba,Protein-packed superfood bar with 10 nuts and seeds infused with 30mg THC and 10mg CBD,$8
-Sweet Grass,Brownie,N/A,N/A
+Sweet Grass,brownie,N/A,N/A
 Edipure,candy,N/A,N/A
 Gaias Garden,brownie,N/A,N/A
-Bhang,candy,N/A,N/A
+Bhang ,candy,N/A,N/A
 Wana,candy,N/A,N/A
 Mountain High,candy,N/A,N/A
-Twirling Hippy,confection candy,N/A,N/A
+Twirling Hippy Confections,confection candy,N/A,N/A
 Colorado Wholesale Distribution,brownie,N/A,N/A
 Tincture Belle,tincture,N/A,N/A
