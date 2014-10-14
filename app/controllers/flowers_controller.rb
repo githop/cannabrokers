@@ -6,4 +6,7 @@ class FlowersController < ApplicationController
 	def show
 		@flower = Flower.find(params[:id])
 	end
+
+	def new
+	end
 end
