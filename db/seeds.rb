@@ -8,6 +8,9 @@
 
 require 'csv'
 
+user = CreateAdminService.new.call
+puts 'CREATED ADMIN USER: ' << user.email
+
 CSV.foreach('db/merchants.csv', headers:true) do |row| 
 	merch = Merchant.create(name: row['Company'].rstrip, description: row['Description'], phone: row['Phone'])
 end
