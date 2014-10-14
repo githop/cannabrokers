@@ -15,6 +15,7 @@ class FlowersController < ApplicationController
 	end
 
 	def create
+		authorize Flower
 		@flower = Flower.new
 		@flower.strain = flower_params[:strain]
 		@flower.kind   = flower_params[:kind]
