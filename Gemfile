@@ -29,6 +29,7 @@ gem 'table_print',   group: :development
 gem 'rails_12factor', group: :production
 gem 'foundation-rails'
 gem 'devise'
+gem 'pundit'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
