@@ -1,4 +1,4 @@
-class UserPolicy < ApplicationPolicy
+class FlowerPolicy < ApplicationPolicy
 	attr_reader :current_user, :model
 
 	def initialize(current_user, model)
@@ -6,7 +6,7 @@ class UserPolicy < ApplicationPolicy
 		@user         = model 
 	end
 
-	def panel?
+	def new?
 		@current_user.admin?
 	end
 end

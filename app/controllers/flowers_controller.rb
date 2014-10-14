@@ -1,4 +1,6 @@
 class FlowersController < ApplicationController
+	before_action :authenticate_user!, only: [:new, :create]
+
 	def index
 		@flowers = Flower.all
 	end
@@ -8,5 +10,7 @@ class FlowersController < ApplicationController
 	end
 
 	def new
+		authorize Flower
+		@flower = Flower.new
 	end
 end
