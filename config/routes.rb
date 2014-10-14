@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   get 'merchants/edibles' => 'merchants#edibles'
   get 'merchants/concentrates' => 'merchants#concentrates'
-  
+  get 'admin' => 'admin#panel'
+
   resources :merchants do 
     resources :edibles
     resources :concentrates
