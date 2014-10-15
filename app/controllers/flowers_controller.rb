@@ -21,8 +21,8 @@ class FlowersController < ApplicationController
 		@flower.kind   = flower_params[:kind]
 		@flower.description = flower_params[:description]
 		@flower.quantity_price = flower_params[:quantity_price]
-		@flower.merchants << Merchant.find_by_name(flower_params[:merchants])
 		if @flower.save
+			@flower.merchants << Merchant.find_by_name(flower_params[:merchants])
 			redirect_to @flower
 		end
 	end

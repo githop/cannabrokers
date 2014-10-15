@@ -1,2 +1,29 @@
-<h3>New Concentrate</h3>
+<div class="row">
+	<div class="large-11 large-offset-1 columns">
+		<h3>New Concentrate</h3>
 
+		<%= form_for [@merchant, @concentrate] do |f| %>
+			<p>
+				<%=f.label :kind %>
+				<%=f.select :kind, Concentrate.all.collect{ |m| m.kind }.uniq %>
+			</p>
+
+			<p>
+				<%=f.label :strain %>
+				<%=f.text_field :strain %>
+			</p>
+
+			<p>
+				<%=f.label :"Quantity / Price" %>
+				<%=f.text_field :quantity_price %>
+			</p>
+
+			<p>
+				<%=f.label :fees %>
+				<%=f.text_field :fees %>
+			</p>
+
+			<%=f.submit class: "button" %>
+		<% end %>
+	</div>
+</div>

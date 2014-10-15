@@ -16,8 +16,8 @@
 				<tr>
 					<td><%=concentrate.kind%></td>
 					<td><%=link_to(concentrate.strain, merchant_concentrate_path(@merchant, concentrate))%></td>
-					<td>$<%=concentrate.quantity_price%></td>
-					<td>$<%=concentrate.fees%></td>
+					<td><%=concentrate.quantity_price%></td>
+					<td><%=concentrate.fees%></td>
 				</tr>		
 				<% end %>
 			</tbody>
