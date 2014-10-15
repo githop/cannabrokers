@@ -6,6 +6,7 @@ class ConcentratePolicy < ApplicationPolicy
 		@user         = model 
 	end
 
+
 	def new?
 		@current_user.admin?
 	end

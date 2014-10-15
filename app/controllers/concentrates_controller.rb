@@ -6,6 +6,7 @@ class ConcentratesController < ApplicationController
 	end
 
 	def show
+		
 		@concentrate = Concentrate.find(params[:id])
 	end
 
