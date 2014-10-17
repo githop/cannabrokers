@@ -1,0 +1,29 @@
+<%= form_for @flower do |f| %>
+<p>
+	<%=f.label :strain %>
+	<%=f.text_field :strain %>
+</p>
+
+<p>
+	<%= f.label :merchants %>
+	<%= f.select :merchants, Merchant.all.collect {|m| m.name} %>
+</p>
+
+<p>
+	<%= f.label :kind %>
+	<%= f.select :kind, Flower.all.collect {|flower| flower.kind}.uniq %>
+</p>
+
+<p>
+	<%= f.label :description %>
+	<%= f.text_area :description%>
+</p>
+
+<p>
+	<%= f.label :"Quantity / Price"%>
+	<%= f.text_field :"quantity_price"%>
+</p>
+
+<%= f.submit class:"button" %>
+
+<% end %>

@@ -1,0 +1,23 @@
+<%= form_for [@merchant, @concentrate] do |f| %>
+<p>
+	<%=f.label :kind %>
+	<%=f.select :kind, Concentrate.all.collect{ |m| m.kind }.uniq %>
+</p>
+
+<p>
+	<%=f.label :strain %>
+	<%=f.text_field :strain %>
+</p>
+
+<p>
+	<%=f.label :"Quantity / Price" %>
+	<%=f.text_field :quantity_price %>
+</p>
+
+<p>
+	<%=f.label :fees %>
+	<%=f.text_field :fees %>
+</p>
+
+<%=f.submit class: "button" %>
+<% end %>
