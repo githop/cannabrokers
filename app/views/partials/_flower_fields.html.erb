@@ -6,7 +6,7 @@
 
 <p>
 	<%= f.label :merchants %>
-	<%= f.select :merchants, Merchant.all.collect {|m| m.name} %>
+	<%= f.collection_select :merchants, Merchant.all, :id, :name, {include_blank: true} %>
 </p>
 
 <p>

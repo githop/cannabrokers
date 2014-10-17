@@ -13,4 +13,12 @@ class FlowerPolicy < ApplicationPolicy
 	def create?
 		@current_user.admin?
 	end
+
+	def new?
+		@current_user.admin?
+	end
+
+	def edit?
+		@current_user.admin?
+	end
 end
