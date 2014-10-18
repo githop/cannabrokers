@@ -30,6 +30,11 @@ gem 'rails_12factor', group: :production
 gem 'foundation-rails'
 gem 'devise'
 gem 'pundit'
+gem 'simplecov', :require => false, :group => :test
+
+group :development, :test do 
+	gem 'rspec-rails'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

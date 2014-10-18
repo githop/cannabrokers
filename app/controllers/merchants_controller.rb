@@ -5,11 +5,11 @@ class MerchantsController < ApplicationController
 	end
 
 	def edibles
-		@merchants = Merchant.includes(:edibles).order('premium DESC').each_with_object([]) {|m, a| m.edibles.any? ? a << m : false }
+		@merchants = Merchant.edible_companies
 	end
 
 	def concentrates
-		@merchants = Merchant.includes(:concentrates).order('premium DESC').each_with_object([]) {|m, a| m.concentrates.any? ? a << m : false }
+		@merchants = Merchant.concentrate_companies
 	end
 
 	def new
