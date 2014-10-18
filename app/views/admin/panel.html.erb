@@ -10,7 +10,10 @@
 				<h3>Add a new Concentrate <small>Pick a company</small></h3>
 				<ul>
 					<% @concentrates.each do |merch| %>
-					<li><%=link_to(merch.name, new_merchant_concentrate_path(merch))%></li>
+					<li>
+					<%=link_to(merch.name, new_merchant_concentrate_path(merch))%>
+					<span class="right"><%=link_to("Edit company", edit_merchant_path(merch))%></span>
+					</li>
 					<% end %>
 				</ul>
 			</div>
@@ -18,7 +21,9 @@
 				<h3>Edible Companies <small>Pick a company</small></h3>
 				<ul>
 					<% @edibles.each do |merch| %>
-					<li><%= link_to(merch.name, new_merchant_edible_path(merch))%></li>
+					<li><%= link_to(merch.name, new_merchant_edible_path(merch))%> 
+					<span class="right"><%=link_to("Edit company", edit_merchant_path(merch))%></span>
+					</li>
 					<% end %>
 				</ul>
 			</div>
