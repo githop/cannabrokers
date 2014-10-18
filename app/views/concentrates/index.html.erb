@@ -9,6 +9,9 @@
 					<th>Strain</th>
 					<th>Description</th>
 					<td>Processing fees</td>
+					<% if current_user && current_user.admin? %>
+						<th>Edit</th>
+					<% end %>
 				</tr>
 			</thead>
 			<tbody>
@@ -18,6 +21,9 @@
 					<td><%=link_to(concentrate.strain, merchant_concentrate_path(@merchant, concentrate))%></td>
 					<td><%=concentrate.quantity_price%></td>
 					<td><%=concentrate.fees%></td>
+					<% if current_user && current_user.admin? %>
+						<td><%=link_to("Edit", edit_merchant_concentrate_path(@merchant, concentrate))%></td>
+					<% end %>
 				</tr>		
 				<% end %>
 			</tbody>
