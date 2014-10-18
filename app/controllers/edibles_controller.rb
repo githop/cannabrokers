@@ -16,11 +16,27 @@ class EdiblesController < ApplicationController
 	end
 
 	def create
-		merchant = Merchant.find(params[:merchant_id])
+		authorize Edible
 		@edible = Edible.new(edible_params)
 		if @edible.save
-			merchant.edibles << @edible
+			merchant = Merchant.find(params[:merchant_id]).edibles << @edible
 			redirect_to merchant_edible_path(merchant, @edible)
+		end
+	end
+
+	def edit
+		authorize Edible
+		@edible = Edible.find(params[:id])
+		@merchant = Merchant.find(params[:merchant_id])
+	end
+
+	def update
+		authorize Edible
+		@edible = Edible.find(params[:id])
+		if @edible.update(edible_params)
+			redirect_to merchant_edible_path(Merchant.find(params[:merchant_id]), @edible)
+		else
+			render 'edit'
 		end
 	end
 
