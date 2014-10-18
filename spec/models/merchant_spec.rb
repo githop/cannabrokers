@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Merchant do 
+RSpec.describe Merchant, type: :model do 
 	let(:merchant) { Merchant.create!(name: "Boulder Botanics", description: "this is it") }
 
 	describe "the merchant model " do 
@@ -25,7 +25,7 @@ describe Merchant do
 				expect merch.macro == :has_many
 			end
 		end
-
+		
 		context "class methods " do 
 			describe "the :edible_companies method" do
 				it "should return a list of only edible companies" do
