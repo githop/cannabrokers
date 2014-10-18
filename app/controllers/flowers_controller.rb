@@ -26,10 +26,10 @@ class FlowersController < ApplicationController
 	def edit
 		authorize Flower
 		@flower = Flower.find(params[:id])
-		@merchant = @flower.merchants
 	end
 
 	def update
+		authorize Flower
 		@flower = Flower.find(params[:id])
 		if @flower.update(flower_params)
 			get_merchant(@flower)

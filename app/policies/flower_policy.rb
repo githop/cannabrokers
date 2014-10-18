@@ -14,11 +14,11 @@ class FlowerPolicy < ApplicationPolicy
 		@current_user.admin?
 	end
 
-	def new?
+	def edit?
 		@current_user.admin?
 	end
 
-	def edit?
+	def update?
 		@current_user.admin?
 	end
 end
