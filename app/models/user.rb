@@ -11,5 +11,15 @@ class User < ActiveRecord::Base
   	self.role ||= :user
   end
 
+  def set_premium_role!
+  	self.role = :premium
+  	self.save
+  end
+
+  def set_user_role!
+  	self.role = :user
+  	self.save
+  end
+
   
 end
