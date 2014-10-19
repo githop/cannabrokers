@@ -10,12 +10,12 @@ class FlowersController < ApplicationController
 	end
 
 	def new
-		authorize Flower
+		authorize User
 		@flower = Flower.new
 	end
 
 	def create
-		authorize Flower
+		authorize User
 		@flower = Flower.new(flower_params)
 		if @flower.save
 			get_merchant(@flower)
