@@ -298,15 +298,27 @@
         1,
         1,
         1,
+        null,
+        1,
+        1,
+        1,
         null
       ],
       "/Users/githop/stuff/dev_cannabroker/conf_mvp/app/models/edible.rb": [
         1,
         1,
         1,
+        null,
+        1,
+        1,
+        1,
         null
       ],
       "/Users/githop/stuff/dev_cannabroker/conf_mvp/app/models/flower.rb": [
+        1,
+        1,
+        1,
+        null,
         1,
         1,
         1,
@@ -329,10 +341,15 @@
         null,
         1,
         1,
+        1,
+        1,
+        null,
+        1,
+        96,
         null,
         null,
         1,
-        1,
+        96,
         null,
         null
       ],
@@ -475,6 +492,6 @@
         null
       ]
     },
-    "timestamp": 1413646068
+    "timestamp": 1413672238
   }
 }
