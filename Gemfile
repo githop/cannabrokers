@@ -32,7 +32,7 @@ gem 'devise'
 gem 'pundit'
 gem 'simplecov', :require => false, :group => :test
 
-group :test do 
+group :test do
 	gem 'rspec-rails'
 	gem 'factory_girl_rails', '~> 4.0'
 	gem 'faker'

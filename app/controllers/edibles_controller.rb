@@ -1,6 +1,6 @@
 class EdiblesController < ApplicationController
 	before_action :authenticate_user!, only: [:new, :create, :edit, :update]
-	
+
 	def index
 		@merchant = Merchant.find(params[:merchant_id])
 	end

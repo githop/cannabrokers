@@ -1,4 +1,4 @@
-# Cannabrokers 
+# Cannabrokers
 
 Cannabrokers is a B2B market place for marijuana dispensaries, growers, and edible and concentrate retailers.
 
@@ -9,7 +9,7 @@ Cannabrokers is a B2B market place for marijuana dispensaries, growers, and edib
 	Devise for authentication
 	Pundit for authorization
 	Factory Girl for testing
-	Foundation css 
+	Foundation css
 
 ###Tests
 	bundle exec rspec
