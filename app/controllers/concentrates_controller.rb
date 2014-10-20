@@ -1,5 +1,5 @@
 class ConcentratesController < ApplicationController
-	before_action :authenticate_user!, only: [:new, :create]
+	before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
 	def index
 		@merchant = Merchant.find(params[:merchant_id])
@@ -10,13 +10,13 @@ class ConcentratesController < ApplicationController
 	end
 
 	def new
-		authorize Concentrate
+		authorize User
 		@merchant = Merchant.find(params[:merchant_id])
 		@concentrate = Concentrate.new
 	end
 
 	def create
-		authorize Concentrate
+		authorize User
 		merchant = Merchant.find(params[:merchant_id])
 		@concentrate = Concentrate.new(concentrate_params)
 		if @concentrate.save
@@ -26,12 +26,13 @@ class ConcentratesController < ApplicationController
 	end
 
 	def edit
-		authorize Concentrate
+		authorize User
 		@concentrate = Concentrate.find(params[:id])
 		@merchant = Merchant.find(params[:merchant_id])
 	end
 
 	def update
+		authorize User
 		@concentrate = Concentrate.find(params[:id])
 		if @concentrate.update(concentrate_params)
 			redirect_to merchant_concentrate_path(Merchant.find(params[:merchant_id]), @concentrate)

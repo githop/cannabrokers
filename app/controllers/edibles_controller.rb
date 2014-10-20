@@ -1,5 +1,5 @@
 class EdiblesController < ApplicationController
-	before_action :authenticate_user!, only: [:new, :create]
+	before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 	
 	def index
 		@merchant = Merchant.find(params[:merchant_id])
@@ -10,13 +10,13 @@ class EdiblesController < ApplicationController
 	end
 
 	def new
-		authorize Edible
+		authorize User
 		@merchant = Merchant.find(params[:merchant_id])
 		@edible = Edible.new
 	end
 
 	def create
-		authorize Edible
+		authorize User
 		@edible = Edible.new(edible_params)
 		if @edible.save
 			merchant = Merchant.find(params[:merchant_id]).edibles << @edible
@@ -25,13 +25,13 @@ class EdiblesController < ApplicationController
 	end
 
 	def edit
-		authorize Edible
+		authorize User
 		@edible = Edible.find(params[:id])
 		@merchant = Merchant.find(params[:merchant_id])
 	end
 
 	def update
-		authorize Edible
+		authorize User
 		@edible = Edible.find(params[:id])
 		if @edible.update(edible_params)
 			redirect_to merchant_edible_path(Merchant.find(params[:merchant_id]), @edible)

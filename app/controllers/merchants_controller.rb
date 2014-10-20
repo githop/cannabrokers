@@ -13,12 +13,12 @@ class MerchantsController < ApplicationController
 	end
 
 	def new
-		authorize Merchant
+		authorize User
 		@merchant = Merchant.new
 	end
 
 	def create
-		authorize Merchant
+		authorize User
 		@merchant = Merchant.new(merch_params)
 		if @merchant.save
 			redirect_to merchant_path(@merchant)
@@ -26,12 +26,12 @@ class MerchantsController < ApplicationController
 	end
 
 	def edit
-		authorize Merchant
+		authorize User
 		@merchant = Merchant.find(params[:id])
 	end
 
 	def update
-		authorize Merchant
+		authorize User
 		@merchant = Merchant.find(params[:id])
 		if @merchant.update(merch_params)
 			redirect_to @merchant
