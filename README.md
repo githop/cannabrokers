@@ -17,7 +17,7 @@ Cannabrokers is a B2B market place for marijuana dispensaries, growers, and edib
 
 ###See it live (heroku)
 
-[](http://www.cannabrokersnetwork.com/)
+[cannabrokersnetwork.com](http://www.cannabrokersnetwork.com/)
 
 ####Todo
 
