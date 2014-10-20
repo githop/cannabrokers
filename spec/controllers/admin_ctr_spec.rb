@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe AdminController do
 
 
-	describe "handling unauthorized users" do 
+	describe "handling unauthorized users" do
 
 	def login_admin
     @request.env["devise.mapping"] = Devise.mappings[:admin]
@@ -19,15 +19,15 @@ RSpec.describe AdminController do
 
 		it "rejects unauthorized users to welcome index" do
 			login_user
-			get :panel 
+			get :panel
 
 			expect(response).to redirect_to(root_path)
 		end
 
-		it "allows admin to panel" do 
+		it "allows admin to panel" do
 			login_admin
 			get :panel
-			
+
 			expect(response).to render_template("panel")
 		end
 	end
