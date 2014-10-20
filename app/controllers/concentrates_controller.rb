@@ -17,11 +17,13 @@ class ConcentratesController < ApplicationController
 
 	def create
 		authorize User
-		merchant = Merchant.find(params[:merchant_id])
+		@merchant = Merchant.find(params[:merchant_id])
 		@concentrate = Concentrate.new(concentrate_params)
 		if @concentrate.save
 			merchant.concentrates << @concentrate
 			redirect_to merchant_concentrate_path(merchant, @concentrate)
+		else
+			render 'new'
 		end
 	end
 

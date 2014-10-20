@@ -21,7 +21,9 @@ class MerchantsController < ApplicationController
 		authorize User
 		@merchant = Merchant.new(merch_params)
 		if @merchant.save
-			redirect_to merchant_path(@merchant)
+			redirect_to @merchant
+		else
+			render 'new'
 		end
 	end
 

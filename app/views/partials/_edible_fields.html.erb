@@ -1,4 +1,14 @@
 <%= form_for [@merchant, @edible] do |f| %>
+<% if @edible.errors.any? %>
+		<div id="error_explanation">
+			<h2><%=pluralize(@edible.errors.count, "error")%> prevented this edible from being saved:</h2>
+			<ul>
+				<% @edible.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
 <p>
 	<%=f.label :name %>
 	<%=f.text_field :name %>

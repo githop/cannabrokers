@@ -1,4 +1,14 @@
 <%= form_for @flower do |f| %>
+<% if @flower.errors.any? %>
+		<div id="error_explanation">
+			<h2><%=pluralize(@flower.errors.count, "error")%> prevented this flower from being saved:</h2>
+			<ul>
+				<% @flower.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
 <p>
 	<%=f.label :strain %>
 	<%=f.text_field :strain %>

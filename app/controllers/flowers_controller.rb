@@ -20,6 +20,8 @@ class FlowersController < ApplicationController
 		if @flower.save
 			get_merchant(@flower)
 			redirect_to @flower
+		else
+			render 'new'
 		end
 	end
 

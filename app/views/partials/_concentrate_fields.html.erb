@@ -1,4 +1,14 @@
 <%= form_for [@merchant, @concentrate] do |f| %>
+	<% if @concentrate.errors.any? %>
+		<div id="error_explanation">
+			<h2><%=pluralize(@concentrate.errors.count, "error")%> prevented this Concentrate from being saved:</h2>
+			<ul>
+				<% @concentrate.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
 <p>
 	<%=f.label :kind %>
 	<%=f.select :kind, Concentrate.all.collect{ |m| m.kind }.uniq %>
