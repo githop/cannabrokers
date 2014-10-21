@@ -1,15 +1,19 @@
 <div class="row">
 	<div class="large-10 large-offset-2 columns">
 		<h3><%=@merchant.name%>
-		<% if @merchant.premium %>
-			<span class="label success radius">Premium</span>
-		<% end %>
+			<% if @merchant.premium %>
+				<span class="label success radius">Premium</span>
+			<% end %>
 		</h3>
-
 		<p><%=@merchant.description%></p>
 		<div class="row">
 			<div class="large-4 columns">
-				<h3>Edibles</h3>
+				<h3>Edibles <small>
+					<% if current_user && current_user.admin? %>
+						<%=link_to("add", new_merchant_edible_path(@merchant))%>
+					<% end %>
+				</small>
+				</h3>
 				<ul>
 				<%@merchant.edibles.each do |edible|%>
 					<li><%=link_to(edible.name, merchant_edible_path(@merchant, edible))%></li>
@@ -17,7 +21,12 @@
 				</ul>
 			</div>
 			<div class="large-4 columns">
-				<h3>Concentrates</h3>
+				<h3>Concentrates <small>
+					<% if current_user && current_user.admin? %>
+						<%=link_to("add", new_merchant_concentrate_path(@merchant))%>
+					<% end %>
+				</small>
+				</h3>
 				<ul>
 				<%@merchant.concentrates.each do |concentrate|%>
 					<li><%=link_to(concentrate.strain, merchant_concentrate_path(@merchant, concentrate))%></li>
@@ -25,7 +34,13 @@
 				</ul>
 			</div>
 			<div class="large-4 columns">
-				<h3>Flowers</h3>
+				<h3>Flowers
+					<small>
+						<% if current_user && current_user.admin? %>
+						<%=link_to("add", new_flower_path)%>
+					<% end %>
+					</small>
+				</h3>
 				<ul>
 					<%@merchant.flowers.each do |flower|%>
 						<li><%=link_to(flower.strain, flower_path(flower))%></li>
