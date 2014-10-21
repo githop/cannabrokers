@@ -43,11 +43,21 @@ RSpec.describe MerchantsController, type: :controller do
   	end
   end
 
-  describe 'GET edit' do
+  describe 'GET edit/:id' do
+    before :each do
+      @merchant = FactoryGirl.create(:merchant)
+    end
+
+    it "as admin, assigns @merchant to edit" do
+      login_admin
+      get :edit, id: @merchant.id
+
+      expect(assigns(:merchant)).to eq(@merchant)
+    end
+
   	it "as admin, renders the edit template" do
   		login_admin
-  		merch = FactoryGirl.create(:merchant)
-  		get :edit, id: merch.id
+  		get :edit, id: @merchant.id
 
   		expect(response).to render_template(:edit)
   	end
@@ -89,9 +99,10 @@ RSpec.describe MerchantsController, type: :controller do
 
   	context "happy path - valid" do
   		it "assigns the correct @merchant to edit" do
+        login_admin
   			put :update, id: @merch, merchant: FactoryGirl.attributes_for(:merchant, )
 
-  			expect(assigns(:merchant) == (@merch))
+  			expect(assigns(:merchant)).to eq(@merch)
   		end
 
   		it "changes the @merchant's attributes" do
