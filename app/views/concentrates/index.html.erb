@@ -7,7 +7,7 @@
 				<tr>
 					<th>Shatter - Wax - Budder - Moonrock - CO<sup>2</sup> - Solventless</th>
 					<th>Strain</th>
-					<th>Description</th>
+					<th>Price</th>
 					<td>Processing fees</td>
 					<% if current_user && current_user.admin? %>
 						<th>Edit</th>
@@ -24,7 +24,7 @@
 					<% if current_user && current_user.admin? %>
 						<td><%=link_to("Edit", edit_merchant_concentrate_path(@merchant, concentrate))%></td>
 					<% end %>
-				</tr>		
+				</tr>
 				<% end %>
 			</tbody>
 		</table>
