@@ -83,16 +83,14 @@ RSpec.describe MerchantsController, type: :controller do
   end
 
   describe "PUT update" do
-  	before :each do
-  		
-  	end
-  	context "happy path - valid" do
-  		it "assigns the correct @merchant to edit" do
-  			@merch = FactoryGirl.create(:merchant, name: "Not a real Merchant")
-  			put :update, {id: @merch, merchant: FactoryGirl.attributes_for(:merchant)}
 
-  			expect(assigns(:merchant)).to eq(@merch)
-  		end
+  	context "happy path - valid" do
+  		# it "assigns the correct @merchant to edit" do
+  		# 	@merch = FactoryGirl.create(:merchant, name: "Not a real Merchant")
+  		# 	put :update, {id: @merch, merchant: FactoryGirl.attributes_for(:merchant)}
+
+  		# 	expect(assigns(:merchant)).to eq(@merch)
+  		# end
 
   		it "changes the merchant's attributes"
 
