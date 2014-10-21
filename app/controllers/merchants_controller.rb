@@ -1,5 +1,5 @@
 class MerchantsController < ApplicationController
-	before_action :authenticate_user!, only: [ :index, :new, :create, :update, :edit]
+	before_action :authenticate_user!, only: [:index, :new, :create, :update, :edit]
 
 	def index
 		authorize User
