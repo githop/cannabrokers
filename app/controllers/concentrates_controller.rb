@@ -20,7 +20,7 @@ class ConcentratesController < ApplicationController
 		@merchant = Merchant.find(params[:merchant_id])
 		@concentrate = Concentrate.new(concentrate_params)
 		if @concentrate.save
-			merchant.concentrates << @concentrate
+			@merchant.concentrates << @concentrate
 			redirect_to merchant_concentrate_path(merchant, @concentrate)
 		else
 			render 'new'

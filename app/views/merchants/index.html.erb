@@ -1,0 +1,45 @@
+
+<div class="row">
+	<div class="large-10 large-offset-1 columns">
+		<h3>All Merchants</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>add flower</th>
+					<th>add edible</th>
+					<th>add concentrate</th>
+					<th>edit</th>
+				</tr>
+			</thead>
+			<tbody>
+			<% @merchants.each do |merch|%>
+				<tr>
+					<td><%=merch.name%></td>
+					<td><%=link_to("add Flower", new_flower_path)%></td>
+					<td><%=link_to("add Edible", new_merchant_edible_path(merch))%></td>
+					<td><%=link_to("add Concentrate", new_merchant_concentrate_path(merch))%></td>
+					<td><%=link_to("Edit Mechant", edit_merchant_path(merch))%></td>
+				</tr>
+			<% end %>
+			</tbody>
+		</table>
+
+		<div data-mantis-zone='cannabrokersnetwork'></div>
+
+	</div>
+</div>
+
+<script type="text/javascript">
+	MANTIS = {
+		site: '54272a6b68e1050b00cc2528'
+	};
+</script>
+<script type="text/javascript">
+	var z = document.createElement("script");
+	z.type = "text/javascript";
+	z.async = true;
+	z.src = "//assets.mantisadnetwork.com/mantodea.min.js";
+	var s = document.getElementsByTagName('head')[0];
+	s.parentNode.insertBefore(z, s);
+</script>

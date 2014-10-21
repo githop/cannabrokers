@@ -1,5 +1,10 @@
 class MerchantsController < ApplicationController
-	before_action :authenticate_user!, only: [:new, :create, :update, :edit]
+	before_action :authenticate_user!, only: [ :index, :new, :create, :update, :edit]
+
+	def index
+		authorize User
+		@merchants = Merchant.all
+	end
 
 	def show
 		@merchant = Merchant.find(params[:id])
