@@ -1,7 +1,7 @@
 require 'faker'
 
-FactoryGirl.define do 
-	factory :flower do 
+FactoryGirl.define do
+	factory :flower do
 		strain { Faker::Commerce.product_name }
 		description { Faker::Lorem.paragraph }
 		kind 'Hybrid'

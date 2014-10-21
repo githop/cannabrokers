@@ -104,12 +104,19 @@ RSpec.describe MerchantsController, type: :controller do
 
       it "redirects to @merchant after update" do
         login_admin
-        put :udate, id: @merch, merchant: FactoryGirl.attributes_for(:merchant)
+        put :update, id: @merch, merchant: FactoryGirl.attributes_for(:merchant)
 
-        expect(response).to redirect_to(Merchant.find(@merch.id))
+        expect(response).to redirect_to(@merch)
       end
-
-
   	end
+
+    context "sad path - not valid" do
+      it "renders the edit template upon failed validation" do
+        login_admin
+        put :update, id: @merch, merchant: FactoryGirl.attributes_for(:merchant, name: nil)
+
+        expect(response).to render_template(:edit)
+      end
+    end
   end
 end
