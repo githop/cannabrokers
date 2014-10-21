@@ -40,8 +40,22 @@ RSpec.describe FlowersController do
   end
 
   describe "GET edit/:id" do
-  	it "ad admin, renders the edit template" do
-  		flower = FactoryGirl.create(:flower)
+    before :each do
+      @flower = FactoryGirl.create(:flower)
+    end
+
+    it "as admin assigns @flower to be edited" do
+      login_admin
+      get :edit, id: @flower.id
+
+      expect(assigns(:flower)).to eq(@flower)
+    end
+
+  	it "as admin, renders the edit template" do
+      login_admin
+      get :edit, id: @flower.id
+
+      expect(response).to render_template(:edit)
   	end
   end
 
@@ -71,5 +85,44 @@ RSpec.describe FlowersController do
   			expect(response).to render_template(:new)
   		end
   	end
+  end
+
+  describe "PUT update" do
+    before :each do
+      @flower = FactoryGirl.create(:flower, strain: "edit-able")
+    end
+
+    context "the happy path - valid" do
+      it "as admin, assigns the correct @flower to edit" do
+        login_admin
+        put :update, id: @flower, flower: FactoryGirl.attributes_for(:flower)
+
+        expect(assigns(:flower)).to eq(@flower)
+      end
+
+      it "updates @flower's attributes" do
+        login_admin
+        put :update, id: @flower, flower: FactoryGirl.attributes_for(:flower, strain: "edited")
+        @flower.reload
+
+        expect(@flower.strain).to eq("edited")
+      end
+
+      it "redirects to the @flower after update" do
+        login_admin
+        put :update, id: @flower, flower: FactoryGirl.attributes_for(:flower)
+
+        expect(response).to redirect_to(@flower)
+      end
+    end
+
+    context "the sad path - not valid" do
+      it "as admin, renders edit template after failed validation" do
+        login_admin
+        put :update, id: @flower, flower: FactoryGirl.attributes_for(:flower, strain: nil)
+
+        expect(response).to render_template(:edit)
+      end
+    end
   end
 end
