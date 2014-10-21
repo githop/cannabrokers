@@ -36,8 +36,9 @@ class EdiblesController < ApplicationController
 	def update
 		authorize User
 		@edible = Edible.find(params[:id])
+		@merchant = Merchant.find(params[:merchant_id])
 		if @edible.update(edible_params)
-			redirect_to merchant_edible_path(Merchant.find(params[:merchant_id]), @edible)
+			redirect_to merchant_edible_path(@merchant, @edible)
 		else
 			render 'edit'
 		end
