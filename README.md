@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/githop/cannabrokers.svg?branch=master)](https://travis-ci.org/githop/cannabrokers)
 # Cannabrokers
 
 Cannabrokers is a B2B market place for marijuana dispensaries, growers, and edible and concentrate retailers.
