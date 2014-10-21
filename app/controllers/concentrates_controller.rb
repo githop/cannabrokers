@@ -36,8 +36,9 @@ class ConcentratesController < ApplicationController
 	def update
 		authorize User
 		@concentrate = Concentrate.find(params[:id])
+		@merchant = Merchant.find(params[:merchant_id])
 		if @concentrate.update(concentrate_params)
-			redirect_to merchant_concentrate_path(Merchant.find(params[:merchant_id]), @concentrate)
+			redirect_to merchant_concentrate_path(@merchant, @concentrate)
 		else
 			render 'edit'
 		end
