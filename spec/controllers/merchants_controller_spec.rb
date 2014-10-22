@@ -83,7 +83,7 @@ RSpec.describe MerchantsController, type: :controller do
 
 
 		context "the sad path - invalid" do
-			it "as admin, redirects back to new template" do
+			it "as admin, renders the new template" do
 				login_admin
 				post :create, merchant: FactoryGirl.attributes_for(:merchant, name: nil)
 
@@ -100,7 +100,7 @@ RSpec.describe MerchantsController, type: :controller do
   	context "happy path - valid" do
   		it "assigns the correct @merchant to edit" do
         login_admin
-  			put :update, id: @merch, merchant: FactoryGirl.attributes_for(:merchant, )
+  			put :update, id: @merch, merchant: FactoryGirl.attributes_for(:merchant)
 
   			expect(assigns(:merchant)).to eq(@merch)
   		end
