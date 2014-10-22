@@ -109,14 +109,14 @@ RSpec.describe EdiblesController do
 
 				expect(response).to redirect_to merchant_edible_path(@merch, @edible)
 			end
+		end
 
-			context "the sad path - not valid" do
-				it "as admin, renders the edit template upon failed validation" do
-					login_admin
-					put :update, merchant_id: @merch, id: @edible, edible: FactoryGirl.attributes_for(:edible, name: nil)
+		context "the sad path - not valid" do
+			it "as admin, renders the edit template upon failed validation" do
+				login_admin
+				put :update, merchant_id: @merch, id: @edible, edible: FactoryGirl.attributes_for(:edible, name: nil)
 
-					expect(response).to render_template(:edit)
-				end
+				expect(response).to render_template(:edit)
 			end
 		end
 	end
