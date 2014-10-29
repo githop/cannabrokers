@@ -1,6 +1,5 @@
 class Edible < ActiveRecord::Base
-	has_many :inventories
-	has_many :merchants, through: :inventories
+	belongs_to :merchant
 
 	validates :name, presence: true
 	validates :description, presence: true

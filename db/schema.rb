@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20141014172333) do
     t.string   "fees"
     t.string   "kind"
     t.string   "quantity_price"
+    t.integer  "merchant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -31,6 +32,7 @@ ActiveRecord::Schema.define(version: 20141014172333) do
     t.string   "name"
     t.text     "description"
     t.string   "price"
+    t.integer  "merchant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -42,25 +44,12 @@ ActiveRecord::Schema.define(version: 20141014172333) do
     t.string   "kind"
     t.text     "description"
     t.string   "quantity_price"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "flowers", ["strain"], name: "index_flowers_on_strain", using: :btree
-
-  create_table "inventories", force: true do |t|
-    t.integer  "flower_id"
-    t.integer  "concentrate_id"
-    t.integer  "edible_id"
     t.integer  "merchant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "inventories", ["concentrate_id"], name: "index_inventories_on_concentrate_id", using: :btree
-  add_index "inventories", ["edible_id"], name: "index_inventories_on_edible_id", using: :btree
-  add_index "inventories", ["flower_id"], name: "index_inventories_on_flower_id", using: :btree
-  add_index "inventories", ["merchant_id"], name: "index_inventories_on_merchant_id", using: :btree
+  add_index "flowers", ["strain"], name: "index_flowers_on_strain", using: :btree
 
   create_table "merchants", force: true do |t|
     t.string   "name"
@@ -68,6 +57,7 @@ ActiveRecord::Schema.define(version: 20141014172333) do
     t.string   "phone"
     t.string   "email"
     t.boolean  "premium",     default: false
+    t.integer  "merchant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

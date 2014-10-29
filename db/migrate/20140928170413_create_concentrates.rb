@@ -5,6 +5,7 @@ class CreateConcentrates < ActiveRecord::Migration
       t.string :fees
       t.string :kind
       t.string :quantity_price
+      t.belongs_to :merchant
 
       t.timestamps
     end

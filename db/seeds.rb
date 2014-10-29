@@ -11,23 +11,26 @@ require 'csv'
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
 
-CSV.foreach('db/merchants.csv', headers:true) do |row| 
-	merch = Merchant.create(name: row['Company'].rstrip, description: row['Description'], phone: row['Phone'])
+CSV.foreach('db/merchants.csv', headers:true) do |row|
+	Merchant.create(name: row['Company'].rstrip, description: row['Description'], phone: row['Phone'], email: row['Email'])
 end
 
 CSV.foreach('db/flowers.csv', headers:true) do |row|
 	flower = Flower.create(strain: row['strain'].rstrip, kind: row['kind'], description: row['Description'], quantity_price: row['Quantity/Price'])
-	flower.merchants << Merchant.find_by_name(row['Company'].rstrip)
+	flower.merchant = Merchant.find_by_name(row['Company'].rstrip)
+	flower.save
 end
 
-CSV.foreach('db/edibles.csv', headers:true) do |row| 
+CSV.foreach('db/edibles.csv', headers:true) do |row|
 	edible = Edible.create(name: row['name'].rstrip, description: row['Description'], price: row['Price'])
-	edible.merchants << Merchant.find_by_name(row['Company'].rstrip)
+	edible.merchant = Merchant.find_by_name(row['Company'].rstrip)
+	edible.save
 end
 
 CSV.foreach('db/concentrates.csv', headers:true) do |row|
 	concentrate = Concentrate.create(strain: row['Strain'].rstrip, fees: row['fees'], quantity_price: row['Quantity/Price'], kind: row['kind'])
-	concentrate.merchants << Merchant.find_by_name(row['Company'].rstrip)
+	concentrate.merchant = Merchant.find_by_name(row['Company'].rstrip)
+	concentrate.save
 end
 
 #Merchant.find_by_name("Boulder Botanics").flowers << Flower.find_by_strain("Bubba Kush")
@@ -43,7 +46,7 @@ end
 # concentrate_strains = ["Sour Kush","Sour D","Pre 98","Golden Goat","Sativa","Hybrid","Sour D", "Trim Processing", "Trim Processing", "Trim Processing"]
 
 # colo_concentrates.concentrates << Concentrate.find_by_strain(concentrate_strains.shift)
-# 6.times do 
+# 6.times do
 # 	craft_c.concentrates << Concentrate.find_by_strain(concentrate_strains.shift)
 # end
 
@@ -53,16 +56,16 @@ end
 # cheeba_chews = Merchant.find_by_name("Cheeba Chews")
 # incredibles = Merchant.find_by_name("Incredibles")
 
-# 7.times do 
+# 7.times do
 # 	cheeba_chews.edibles << Edible.find_by_name(edibles.shift)
 # end
 
-# 12.times do 
+# 12.times do
 # 	incredibles.edibles << Edible.find_by_name(edibles.shift)
 # end
 
-7.times do 
-	m = Merchant.all.sample 
+7.times do
+	m = Merchant.all.sample
 	m.premium = true
 	m.save
 end

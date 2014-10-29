@@ -5,6 +5,7 @@ class CreateFlowers < ActiveRecord::Migration
       t.string :kind
       t.text :description
       t.string :quantity_price
+      t.belongs_to :merchant
 
       t.timestamps
     end

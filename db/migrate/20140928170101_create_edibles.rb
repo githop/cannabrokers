@@ -4,6 +4,7 @@ class CreateEdibles < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.string :price
+      t.belongs_to :merchant
 
       t.timestamps
     end

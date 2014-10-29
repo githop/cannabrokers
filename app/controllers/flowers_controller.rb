@@ -48,13 +48,14 @@ class FlowersController < ApplicationController
 	end
 
 	def merch_param
-		params.require(:flower).permit(:merchants)
+		params.require(:flower).permit(:merchant)
 	end
 
 	def get_merchant(flower)
-		if !merch_param[:merchants].blank?
-			merch = Merchant.find(merch_param[:merchants])
-			flower.merchants << merch
+		if !merch_param[:merchant].blank?
+			merch = Merchant.find(merch_param[:merchant])
+			flower.merchant = merch
+			flower.save
 		end
 	end
 
