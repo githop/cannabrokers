@@ -1,0 +1,2 @@
+module EquipLicsHelper
+end

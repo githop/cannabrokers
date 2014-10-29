@@ -33,6 +33,10 @@ CSV.foreach('db/concentrates.csv', headers:true) do |row|
 	concentrate.save
 end
 
+CSV.foreach('db/equipment.csv', headers:true) do |row|
+	Equipment.create(item: row['item'].rstrip, description: row['description'], kind: row['kind'], price: row['price'])
+end
+
 #Merchant.find_by_name("Boulder Botanics").flowers << Flower.find_by_strain("Bubba Kush")
 
 

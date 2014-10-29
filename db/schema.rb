@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141014172333) do
+ActiveRecord::Schema.define(version: 20141029171558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20141014172333) do
     t.datetime "updated_at"
   end
 
+  add_index "concentrates", ["merchant_id"], name: "index_concentrates_on_merchant_id", using: :btree
   add_index "concentrates", ["strain"], name: "index_concentrates_on_strain", using: :btree
 
   create_table "edibles", force: true do |t|
@@ -37,7 +38,20 @@ ActiveRecord::Schema.define(version: 20141014172333) do
     t.datetime "updated_at"
   end
 
+  add_index "edibles", ["merchant_id"], name: "index_edibles_on_merchant_id", using: :btree
   add_index "edibles", ["name"], name: "index_edibles_on_name", using: :btree
+
+  create_table "equipment", force: true do |t|
+    t.string   "item"
+    t.text     "description"
+    t.string   "kind"
+    t.string   "price"
+    t.integer  "merchant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "equipment", ["merchant_id"], name: "index_equipment_on_merchant_id", using: :btree
 
   create_table "flowers", force: true do |t|
     t.string   "strain"
@@ -62,6 +76,7 @@ ActiveRecord::Schema.define(version: 20141014172333) do
     t.datetime "updated_at"
   end
 
+  add_index "merchants", ["merchant_id"], name: "index_merchants_on_merchant_id", using: :btree
   add_index "merchants", ["name"], name: "index_merchants_on_name", using: :btree
 
   create_table "users", force: true do |t|
