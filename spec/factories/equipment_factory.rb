@@ -1,7 +1,7 @@
 
 
 FactoryGirl.define do
-	factory :equip_lic do
+	factory :equipment do
 		item { Faker::Commerce.product_name }
 		description { Faker::Company.catch_phrase }
 		price "$500"
