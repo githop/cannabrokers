@@ -2,6 +2,7 @@ class Merchant < ActiveRecord::Base
 	has_many :flowers
 	has_many :concentrates
 	has_many :edibles
+	has_many :equipments
 
 	validates :name, presence: true
 	validates :phone, presence: true

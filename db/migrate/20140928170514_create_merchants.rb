@@ -6,7 +6,7 @@ class CreateMerchants < ActiveRecord::Migration
       t.string :phone
       t.string :email
       t.boolean :premium, default: false
-      t.belongs_to :merchant
+      t.belongs_to :merchant, index: true
 
       t.timestamps
     end

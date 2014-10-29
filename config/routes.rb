@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users
   root to: 'welcome#index'
 
@@ -7,14 +6,16 @@ Rails.application.routes.draw do
   get 'merchants/concentrates' => 'merchants#concentrates'
   get 'admin' => 'admin#panel'
 
-  resources :merchants do 
+
+  resources :merchants do
     resources :edibles
     resources :concentrates
     resources :flowers, only: [:show, :index]
   end
-  resources :flowers
 
- 
+  resources :flowers
+  resources :equipment
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
