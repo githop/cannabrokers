@@ -7,36 +7,7 @@
 		<span class="right"><%=@equipment.kind%> </span>
 		</div>
 		<p><%=@equipment.description%></p>
+		<%= render 'partials/mantis_ad_network' %>
 	</div>
 </div>
 
-<% if current_user && current_user.admin? || current_user && current_user.premium? %>
-<div class="row">
-	<div class="large-10 large-2-offset columns">
-		<div id="wufoo-z17jqrs51tj8guf">
-			Fill out my <a href="https://bleechack.wufoo.com/forms/z17jqrs51tj8guf">online form</a>.
-		</div>
-		<div id="wuf-adv" style="font-family:inherit;font-size: small;color:#a7a7a7;text-align:center;display:block;">The easy to use <a href="http://www.wufoo.com/form-builder/">Wufoo form builder</a> helps you make forms easy, fast, and fun.</div>
-	</div>
-</div>
-<script type="text/javascript">var z17jqrs51tj8guf;(function(d, t) {
-	var s = d.createElement(t), options = {
-		'userName':'bleechack',
-		'formHash':'z17jqrs51tj8guf',
-		'autoResize':true,
-		'height':'660',
-		'async':true,
-		'host':'wufoo.com',
-		'header':'show',
-		'ssl':true,
-		'defaultValues':'Field19=Best+Available&Field10=<%=@equipment.item%>'
-	};
-	s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
-	s.onload = s.onreadystatechange = function() {
-		var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
-		try { z17jqrs51tj8guf = new WufooForm();z17jqrs51tj8guf.initialize(options);z17jqrs51tj8guf.display(); } catch (e) {}};
-		var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-	})(document, 'script');
-	$("#wuf-adv").hide();
-</script>
-<% end %>
