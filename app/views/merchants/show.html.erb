@@ -4,6 +4,11 @@
 			<% if @merchant.premium %>
 				<span class="label success radius">Premium</span>
 			<% end %>
+			<small>
+				<% if current_user && current_user.admin? %>
+					<%=link_to('edit', edit_merchant_path(@merchant))%>
+				<% end %>
+			</small>
 		</h3>
 		<ul class="inline-list">
 			<li>Email: <%=@merchant.email%></li>

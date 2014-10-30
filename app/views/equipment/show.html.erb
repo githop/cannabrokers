@@ -1,7 +1,13 @@
 
 <div class="row">
 	<div class="large-10 large-2-offset columns">
-		<h3><%=@equipment.item%> <small>equipment</small></h3>
+		<h3><%=@equipment.item%>
+			<small> equipment
+				<% if current_user && current_user.admin? %>
+					<%=link_to('edit', edit_equipment_path(@equipment))%>
+				<% end %>
+			</small>
+		</h3>
 		<div class="panel">
 		<span>Price/Quantity: <%=@equipment.price%></span>
 		<span class="right"><%=@equipment.kind%> </span>
