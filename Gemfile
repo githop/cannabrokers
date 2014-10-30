@@ -37,6 +37,7 @@ group :test do
 	gem 'factory_girl_rails', '~> 4.0'
 	gem 'faker'
 	gem 'database_cleaner'
+	gem 'capybara'
 end
 
 # Use ActiveModel has_secure_password
