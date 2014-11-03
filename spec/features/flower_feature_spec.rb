@@ -16,7 +16,7 @@ feature 'the flower resource' do
 			click_link("Add a new Flower")
 			within('#new_flower') do
 				fill_in("Strain", with: "Capybara")
-				select("Hybrid", from: "flower_kind")
+				select('Indica', from: "flower_kind")
 				fill_in("Quantity / Price", with: "$50" )
 				click_button("Create Flower")
 			end
