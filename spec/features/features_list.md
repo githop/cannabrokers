@@ -11,9 +11,6 @@
 2. An admin can sign in on the sign_in route
 		expectation: with valid credentials, auth then redirected to admin panel
 
-3. An admin visits the /admin route
-		epectation: admin panel loads
-
 ### Admin actions
 
 ##flower
