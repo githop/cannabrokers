@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'merchants/edibles' => 'merchants#edibles'
   get 'merchants/concentrates' => 'merchants#concentrates'
+  get 'flowers/all' => 'flowers#all'
   get 'admin' => 'admin#panel'
 
 
