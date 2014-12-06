@@ -1,8 +1,13 @@
 class FlowersController < ApplicationController
-	before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+	before_action :authenticate_user!, only: [:new, :create, :edit, :update, :all]
 
 	def index
+		@flowers = Flower.where(display: true)
+	end
+
+	def all
 		@flowers = Flower.all
+		render :index
 	end
 
 	def show
@@ -44,7 +49,7 @@ class FlowersController < ApplicationController
 	private
 
 	def flower_params
-		params.require(:flower).permit(:strain, :kind, :description, :quantity_price)
+		params.require(:flower).permit(:strain, :kind, :description, :quantity_price, :display)
 	end
 
 	def merch_param

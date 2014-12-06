@@ -1,8 +1,13 @@
 class EquipmentController < ApplicationController
-	before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+	before_action :authenticate_user!, only: [:new, :create, :edit, :update, :all]
 
 	def index
+		@equipments = Equipment.where(display: true)
+	end
+
+	def all
 		@equipments = Equipment.all
+		render :index
 	end
 
 	def show
@@ -43,7 +48,7 @@ class EquipmentController < ApplicationController
 
 	private
 	def equipment_params
-		params.require(:equipment).permit(:item, :description, :price, :kind)
+		params.require(:equipment).permit(:item, :description, :price, :kind, :display)
 	end
 
 	def merch_param

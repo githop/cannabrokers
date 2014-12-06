@@ -2,9 +2,6 @@
 <div class="row">
 	<div class="large-10 large-offset-1 columns">
 		<h3><%=@merchant.name%><small> concentrates</small></h3>
-		<% if current_user && current_user.admin? %>
-			<%=link_to("See All Concentrates - Including inactive", merchant_concentrates_all_path(@merchant))%>
-		<% end %>
 		<table>
 			<thead>
 				<tr>
@@ -18,7 +15,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<%@merchant.concentrates.where(display: true).each do |concentrate|%>
+				<%@merchant.concentrates.each do |concentrate|%>
 				<tr>
 					<td><%=concentrate.kind%></td>
 					<td><%=link_to(concentrate.strain, merchant_concentrate_path(@merchant, concentrate))%></td>

@@ -5,6 +5,10 @@ class ConcentratesController < ApplicationController
 		@merchant = Merchant.find(params[:merchant_id])
 	end
 
+	def all
+		@merchant = Merchant.find(params[:merchant_id])
+	end
+
 	def show
 		@concentrate = Concentrate.find(params[:id])
 	end
@@ -47,6 +51,6 @@ class ConcentratesController < ApplicationController
 	private
 
 	def concentrate_params
-		params.require(:concentrate).permit(:kind, :strain, :quantity_price, :fees)
+		params.require(:concentrate).permit(:kind, :strain, :quantity_price, :fees, :display)
 	end
 end

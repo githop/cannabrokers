@@ -4,16 +4,20 @@ Rails.application.routes.draw do
 
   get 'merchants/edibles' => 'merchants#edibles'
   get 'merchants/concentrates' => 'merchants#concentrates'
+  get 'flowers/all' => 'flowers#all'
   get 'admin' => 'admin#panel'
 
 
   resources :merchants do
+    get 'edibles/all' => 'edibles#all'
+    get 'concentrates/all' => 'concentrates#all'
     resources :edibles
     resources :concentrates
     resources :flowers, only: [:show, :index]
   end
 
   resources :flowers
+  get 'equipment/all' => 'equipment#all'
   resources :equipment
 
 

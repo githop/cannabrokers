@@ -2,6 +2,9 @@
 <div class="row">
 	<div class="large-11 large-offset-1 columns">
 		<h3>Equipment - Liceneses - Property</h3>
+		<% if current_user && current_user.admin? %>
+			<%=link_to("See All Equipment - Including inactive", equipment_all_path)%>
+		<% end %>
 		<table>
 			<thead>
 				<tr>

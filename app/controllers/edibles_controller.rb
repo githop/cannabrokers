@@ -1,7 +1,11 @@
 class EdiblesController < ApplicationController
-	before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+	before_action :authenticate_user!, only: [:new, :create, :edit, :update, :all]
 
 	def index
+		@merchant = Merchant.find(params[:merchant_id])
+	end
+
+	def all
 		@merchant = Merchant.find(params[:merchant_id])
 	end
 
@@ -47,7 +51,7 @@ class EdiblesController < ApplicationController
 	private
 
 	def edible_params
-		params.require(:edible).permit(:name, :description, :price)
+		params.require(:edible).permit(:name, :description, :price, :display)
 	end
 
 end
