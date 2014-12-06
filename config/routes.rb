@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
 
   resources :merchants do
+    get 'edibles/all' => 'edibles#all'
     resources :edibles
     resources :concentrates
     resources :flowers, only: [:show, :index]

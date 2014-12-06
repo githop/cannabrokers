@@ -14,7 +14,7 @@
 				</tr>
 			</thead>
 			<tbody>
-			<%@merchant.edibles.where(display: true).each do |edible|%>
+			<%@merchant.edibles.each do |edible|%>
 				<tr>
 					<td><%=link_to(edible.name, merchant_edible_path(@merchant, edible))%></td>
 					<td><%=edible.description[0..40]%></td>
