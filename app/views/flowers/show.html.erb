@@ -1,6 +1,9 @@
 <div class="row">
 	<div class="large-10 large-2-offset columns">
 		<h3><%=@flower.strain%> <small>flower</small></h3>
+		<% if current_user && current_user.admin? %>
+			<%=link_to("Edit", edit_flower_path(@flower))%>
+		<% end %>
 		<div class="panel">
 		<span>Price/Quantity: <%=@flower.quantity_price%></span>
 		<span class="right"><%=@flower.kind%> </span>
