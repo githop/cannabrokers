@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   end
 
   resources :flowers
+  get 'equipment/all' => 'equipment#all'
   resources :equipment
 
 
