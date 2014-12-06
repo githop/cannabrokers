@@ -15,7 +15,7 @@
 			<tbody>
 			<% @merchants.each do |merch|%>
 				<tr>
-					<td><%=merch.name%></td>
+					<td><%=link_to(merch.name, merchant_path(merch))%></td>
 					<td><%=link_to("add Flower", new_flower_path)%></td>
 					<td><%=link_to("add Edible", new_merchant_edible_path(merch))%></td>
 					<td><%=link_to("add Concentrate", new_merchant_concentrate_path(merch))%></td>

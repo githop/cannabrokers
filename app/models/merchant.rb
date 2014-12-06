@@ -13,7 +13,15 @@ class Merchant < ActiveRecord::Base
 		self.includes(:edibles).order('premium DESC').each_with_object([]) {|m, a| m.edibles.any? ? a << m : false }
 	end
 
+	def self.active_edible_companies
+		self.includes(:edibles).order('premium DESC').where( edibles: {display: true} )
+	end
+
 	def self.concentrate_companies
 		self.includes(:concentrates).order('premium DESC').each_with_object([]) {|m, a| m.concentrates.any? ? a << m : false }
+	end
+
+	def self.active_concentrate_companies
+		self.includes(:concentrates).order('premium DESC').where( concentrates: {display: true} )
 	end
 end

@@ -1,6 +1,9 @@
 <div class="row">
 	<div class="large-10 large-2-offset columns">
 		<h3><%=@concentrate.strain%> <small>concentrate</small></h3>
+		<% if current_user && current_user.admin? %>
+			<%=link_to("Edit", edit_merchant_concentrate_path(Merchant.find(params[:merchant_id]), @concentrate))%>
+		<% end %>
 		<div class="panel">
 			<span>Price: <%=@concentrate.quantity_price%></span> <span> Fees: <%=@concentrate.fees%></span>
 			<span class="right"><%=@concentrate.kind%></span>
