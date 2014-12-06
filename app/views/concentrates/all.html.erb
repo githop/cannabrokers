@@ -15,7 +15,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<%@merchant.concentrates.where(display: true).each do |concentrate|%>
+				<%@merchant.concentrates.each do |concentrate|%>
 				<tr>
 					<td><%=concentrate.kind%></td>
 					<td><%=link_to(concentrate.strain, merchant_concentrate_path(@merchant, concentrate))%></td>
