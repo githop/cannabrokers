@@ -11,11 +11,11 @@ class MerchantsController < ApplicationController
 	end
 
 	def edibles
-		@merchants = Merchant.edible_companies
+		@merchants = Merchant.active_edible_companies
 	end
 
 	def concentrates
-		@merchants = Merchant.concentrate_companies
+		@merchants = Merchant.active_concentrate_companies
 	end
 
 	def new
