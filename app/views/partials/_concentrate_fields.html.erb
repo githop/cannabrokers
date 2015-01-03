@@ -11,7 +11,7 @@
 	<% end %>
 <p>
 	<%=f.label :kind %>
-	<%=f.select :kind, Concentrate.all.collect{ |m| m.kind }.uniq %>
+	<%=f.text_field :kind %>
 </p>
 
 <p>
