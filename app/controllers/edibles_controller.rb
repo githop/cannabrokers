@@ -51,7 +51,7 @@ class EdiblesController < ApplicationController
 	private
 
 	def edible_params
-		params.require(:edible).permit(:name, :description, :price, :display)
+		params.require(:edible).permit(:name, :description, :price, :display, :rec_med)
 	end
 
 end

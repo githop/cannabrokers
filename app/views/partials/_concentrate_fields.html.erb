@@ -11,7 +11,7 @@
 	<% end %>
 <p>
 	<%=f.label :kind %>
-	<%=f.select :kind, Concentrate.all.collect{ |m| m.kind }.uniq %>
+	<%=f.text_field :kind %>
 </p>
 
 <p>
@@ -27,6 +27,11 @@
 <p>
 	<%=f.label :fees %>
 	<%=f.text_field :fees %>
+</p>
+
+<p>
+	<%= f.label :"Recrational / Medical" %>
+	<%= f.text_field :rec_med %>
 </p>
 
 <p>

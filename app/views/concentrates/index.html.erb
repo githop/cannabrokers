@@ -8,10 +8,11 @@
 		<table>
 			<thead>
 				<tr>
-					<th>Shatter - Wax - Budder - Moonrock - CO<sup>2</sup> - Solventless</th>
+					<th>Type</th>
 					<th>Strain</th>
 					<th>Price</th>
 					<td>Processing fees</td>
+					<th>Recreational / Medical</th>
 					<% if current_user && current_user.admin? %>
 						<th>Edit</th>
 					<% end %>
@@ -23,7 +24,8 @@
 					<td><%=concentrate.kind%></td>
 					<td><%=link_to(concentrate.strain, merchant_concentrate_path(@merchant, concentrate))%></td>
 					<td><%=concentrate.quantity_price%></td>
-					<td><%=concentrate.fees%></td>
+					<td><%=concentrate.fees %></td>
+					<td><%=concentrate.rec_med %></td>
 					<% if current_user && current_user.admin? %>
 						<td><%=link_to("Edit", edit_merchant_concentrate_path(@merchant, concentrate))%></td>
 					<% end %>

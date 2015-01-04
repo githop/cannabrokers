@@ -51,6 +51,6 @@ class ConcentratesController < ApplicationController
 	private
 
 	def concentrate_params
-		params.require(:concentrate).permit(:kind, :strain, :quantity_price, :fees, :display)
+		params.require(:concentrate).permit(:kind, :strain, :quantity_price, :fees, :display, :rec_med)
 	end
 end
