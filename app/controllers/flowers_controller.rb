@@ -49,7 +49,7 @@ class FlowersController < ApplicationController
 	private
 
 	def flower_params
-		params.require(:flower).permit(:strain, :kind, :description, :quantity_price, :display)
+		params.require(:flower).permit(:strain, :kind, :description, :quantity_price, :display, :rec_med)
 	end
 
 	def merch_param
